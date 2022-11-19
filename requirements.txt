@@ -1,0 +1,13 @@
+virtualenv
+
+isort
+
+flake8
+flake8-annotations
+flake8-docstrings
+flake8-bandit
+flake8-isort
+
+django
+
+tensorflow
