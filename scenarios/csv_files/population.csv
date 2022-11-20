@@ -1,0 +1,5 @@
+text,population_min,population_max,In numerical terms,Country Example
+"{A} houses a small number of people, though still enough for a country.",0,0.4, 20%-50% (<4*10^6),"(Jamaica, Estonia)"
+{A} is a moderately populated country.,0.4,0.6,50%-90% (<7*10^7),"(UK, Poland)"
+{A} is a highly populated country.,0.6,0.8,90%-99% (< 5*10^8) not quite China/India,"(US, Japan)"
+"{A} is up there with the most highly populated countries in the world, a ""King"" of the global population figures.",0.8,1,> 5*10^8 India/China,"(India, China)"

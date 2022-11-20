@@ -1,0 +1,7 @@
+text,cares_about_min,cares_about_max
+{A} is practically indifferent to the outcome.,0,0.1
+{A} sees the matter as slightly important.,0.1,0.2
+{A} considers the case as somewhat important,0.2,0.4
+"{A} finds the situation quite important, it will occupy a significant number of thoughts",0.4,0.7
+"{A} is unable to think of much else. It must try to win, on the condition that there is no risk of itself being lost.",0.7,0.9
+{A} considers this to take precedence over anything else.,0.9,1
