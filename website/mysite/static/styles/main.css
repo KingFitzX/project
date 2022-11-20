@@ -8,7 +8,7 @@ body {
     padding: 15px 20px;
     width: 70vw;
     max-width: 1200px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
 }
 
@@ -63,4 +63,9 @@ button, input[type="submit"], input[type="reset"] {
 
 p {
     padding: 0px 30px 0px 30px
+}
+
+select {
+    display: block;
+    padding: 10px;
 }
