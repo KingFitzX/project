@@ -131,3 +131,4 @@ dmypy.json
 .github
 .vscode
 .idea
+neuralnet/model

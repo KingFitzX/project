@@ -1,19 +1,18 @@
 # Library imports
-from nnutils import dicts_to_numpy_array
-from nnutils import numpy_array_to_float
-import random
 import tensorflow as tf
-from tensorflow._api.v2.experimental import numpy
 
 
 # Defines a neural network class
 class NeuralNet:
 
     # Defines the constructor
-    def __init__(self, weightList=None):
+    def __init__(self):
 
-        # Creates a neural network depending on if a weight list is specified
-        if weightList is None:
+        # Attempts to load the model
+        try:
+            self.__model = tf.keras.models.load_model("./model")
+
+        except:
             self.__model = tf.keras.Sequential([
                 tf.keras.layers.Input(11),
                 tf.keras.layers.Dense(16, activation='sigmoid'),
@@ -21,17 +20,11 @@ class NeuralNet:
                 tf.keras.layers.Dense(1, activation='sigmoid')
             ])
 
-        else:
-            kernelInitializer1 = tf.keras.initializers.constant(weightList[0])
-            kernelInitializer2 = tf.keras.initializers.constant(weightList[2])
-            self.__model = tf.keras.Sequential([
-                tf.keras.layers.Input(11),
-                tf.keras.layers.Dense(16, activation='sigmoid', kernel_initializer=kernelInitializer1),
-                tf.keras.layers.Dropout(0.1),
-                tf.keras.layers.Dense(1, activation='sigmoid', kernel_initializer=kernelInitializer2)
-            ])
-
         self.__loss_fn = tf.keras.losses.CategoricalCrossentropy(from_logits=False)
+
+    # Defines the class destructor
+    def __del__(self):
+        self.__model.save("./model")
 
     # Defines the network prediction calculation function
     # N.B. trainingDataList is the numpy equivalent list of 2D lists of input values
@@ -40,7 +33,7 @@ class NeuralNet:
 
     # Defines the loss calculation function
     def calc_loss(self, expectedOutputs, calculatedOutputs):
-        return self.__loss_fn(expectedOutputs, calculatedOutputs).numpy() * (10 ** 6)
+        return self.__loss_fn(expectedOutputs, calculatedOutputs).numpy()
 
     # Defines the compile function
     def compile(self):
@@ -59,5 +52,4 @@ class NeuralNet:
     # Defines the evaluation function
     def evaluate(self):
         return self.__model.evaluate()
-
 
