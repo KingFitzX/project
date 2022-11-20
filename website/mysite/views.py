@@ -41,6 +41,8 @@ def button_results(request):
             else:
                 p = {"pressedtext": "didn't press"}
 
+            p["pressed"] = pressed
+
             paramset = ParamSet.objects.get(id=form.cleaned_data["scid"])
             print(paramset)
 
