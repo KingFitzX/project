@@ -1,5 +1,5 @@
 import random
-import text_gen
+from . import text_gen
 from . import csv_parser
 
 def gen_scenario():
