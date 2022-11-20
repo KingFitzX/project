@@ -4,7 +4,7 @@ import numpy as np
 import scenarios.interface as interface
 import neuralnet.neuralnet as nn
 import neuralnet.nnutils as nu
-from .forms import ButtonForm
+from .forms import ButtonForm, ShowcaseForm
 from .models import ParamSet, Result
 
 neuralnet = nn.NeuralNet()
@@ -58,7 +58,33 @@ def button_results(request):
             print(form.errors)
 
 def showcase(request):
-    return render(request, "mysite/showcase.html", {})
+    form = ShowcaseForm()
+    return render(request, "mysite/showcase.html", {"form": form})
 
 def showcase_results(request):
-    return None
+    if request.method == "POST":
+        form = ShowcaseForm(request.POST)
+
+        if form.is_valid():
+            data = form.cleaned_data
+            paramdict = {
+                "country_alpha":{
+                    "cares_about": float(data["a_ca"]),
+                    "no_nukes": float(data["a_nn"]),
+                    "agression": float(data["a_a"]),
+                    "international_rep": float(data["a_ir"]),
+                    "population": float(data["a_p"]),
+                    "provocation": float(data["a_pr"]),
+                },
+                "country_beta":{
+                    "cares_about": float(data["b_ca"]),
+                    "no_nukes": float(data["b_nn"]),
+                    "agression": float(data["b_a"]),
+                    "international_rep": float(data["b_ir"]),
+                    "population": float(data["b_p"]),
+                },
+            }
+
+            airesult = nu.numpy_array_to_float(neuralnet.calc_prediction(nu.dicts_to_numpy_array(paramdict)))
+
+            return render(request, "mysite/showcaseresults.html", {"chance": airesult * 100})

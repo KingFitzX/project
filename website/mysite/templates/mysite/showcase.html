@@ -1,0 +1,40 @@
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+
+    <style>
+    html {
+        background-image: url('https://img.huffingtonpost.com/asset/5900c770260000bd9ac47d4d.jpeg?cache=z8ZC5rulQv&ops=1778_1000');
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    </style>
+
+<form action="/showcase/results" method="post">
+    {% csrf_token %}
+    <h3>Meaning of inputs</h3>
+    Country A is the country <b>you</b> are acting as, and Country B is the opposing country.
+    <br><br>
+    "Cares About" - Represents how much the nation cares about the contention in question (e.g. human resources in country, oil imports).
+    <br>
+    "No. Nukes" - Represents how many nuclear weapons the nation has.
+    <br>
+    "Aggression" - Represents how willing a country is to attack with nuclear weapons or go to war.
+    <br>
+    "International Rep" - Represents how much international support a country has.
+    <br>
+    "Population" - Represents the population for the nation.
+    <br>
+    "Provocation" - Represents whether the country has been bombed in the scenario.
+    <br>
+
+    <h3>Input Choosing</h3>
+    {{ form }}
+    <br><br>
+    <input type="submit" value="Calculate">
+</form>
+
+{% endblock %}

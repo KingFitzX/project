@@ -1,7 +1,20 @@
 {% extends 'mysite/base.html' %}
 
 {% block content %}
-<p>{{ scenario|safe }}</p>
+
+    <style>
+    html {
+        background-image: url('https://img.huffingtonpost.com/asset/5900c770260000bd9ac47d4d.jpeg?cache=z8ZC5rulQv&ops=1778_1000');
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    </style>
+
+
+<p>{{ scenario }}</p>
 <p><em>Will you press the button?</em></p>
 <form action="/button/results" method="post">
     {% csrf_token %}
