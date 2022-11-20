@@ -1,7 +1,7 @@
 # project description
 
 ## NN Parameters:
-Note that all of these are parameters for each nation.
+Note that all of these are parameters for each nation (except for `provocation`)
 
 Each parameter is a `float` value from 0 to 1 inclusive.
 
@@ -28,4 +28,10 @@ Each parameter is a `float` value from 0 to 1 inclusive.
 - population 
     - Represents the population for the nation
     - Exponential / Logarithmic scale to fit 0 to 1 scale
+
+- provocation
+    - Represents whether the country has been bombed in the scenario
+    - Boolean value (0 or 1)
+    - Only for country alpha
+
 
