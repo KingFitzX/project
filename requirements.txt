@@ -13,6 +13,4 @@ django
 tensorflow
 
 pandas
-copy
-random
 markdown
