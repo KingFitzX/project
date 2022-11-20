@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import ParamSet, Result
 
-# Register your models here.
+admin.site.register(ParamSet)
+admin.site.register(Result)

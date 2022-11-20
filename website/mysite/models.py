@@ -40,6 +40,25 @@ class ParamSet(models.Model):
 
         self.ai_result = 0.0
 
+    def paramsToDict(self):
+        return {
+            "country_alpha": {
+                "cares_about": self.country_alpha_cares_about,
+                "no_nukes": self.country_alpha_no_nukes,
+                "agression": self.country_alpha_agression,
+                "international_rep": self.country_alpha_international_rep,
+                "population": self.country_alpha_population,
+                "provocation": self.provocation,
+            },
+            "country_beta": {
+                "cares_about": self.country_beta_cares_about,
+                "no_nukes": self.country_beta_no_nukes,
+                "agression": self.country_beta_agression,
+                "international_rep": self.country_beta_international_rep,
+                "population": self.country_beta_population,
+            },
+        }
+
 class Result(models.Model):
     params = models.ForeignKey(ParamSet, models.CASCADE)
     pressed = models.BooleanField()
