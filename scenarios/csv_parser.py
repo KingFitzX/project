@@ -70,7 +70,7 @@ class CSVParser:
         self.dict = get_modified_dict_from_dataframe(csv_file)
 
         if file_name == "conflicts.csv":
-            self.dict = flip_and_merge_conflicts(self.__dict)
+            self.dict = flip_and_merge_conflicts(self.dict)
 
     def filter_with(self, filters):
         out_dict = copy.deepcopy(self.dict)
