@@ -17,7 +17,7 @@ def is_ignore_char(val):
 
 class Filter(ABC):
 
-    parameters: set[str]
+    parameters
 
     @abstractmethod
     def strict_filter_row(self, row) -> bool:
