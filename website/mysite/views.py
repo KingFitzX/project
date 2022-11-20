@@ -4,7 +4,7 @@ import numpy as np
 import scenarios.interface as interface
 import neuralnet.neuralnet as nn
 import neuralnet.nnutils as nu
-from .forms import ButtonForm
+from .forms import ButtonForm, ShowcaseForm
 from .models import ParamSet, Result
 
 neuralnet = nn.NeuralNet()
@@ -58,7 +58,8 @@ def button_results(request):
             print(form.errors)
 
 def showcase(request):
-    return render(request, "mysite/showcase.html", {})
+    form = ShowcaseForm()
+    return render(request, "mysite/showcase.html", {"form": form})
 
 def showcase_results(request):
     return None
