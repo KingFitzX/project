@@ -4,7 +4,7 @@ from . import csv_parser
 
 def gen_scenario():
     random_params = randomise_both_country_parameters()
-    scenario_text = text_gen.full_scenario_html(random_params)
+    scenario_text = text_gen.full_scenario_html({"country_alpha":{}, "country_beta":{}, })
 
     return {
         "scenario": scenario_text,
@@ -27,8 +27,8 @@ def attr_descriptions():
 
 def randomise_both_country_parameters():
     return {
-        "country_alpha": randomise_parameters(provocation=True),
-        "country_beta": randomise_parameters()
+        "country_alpha": randomise_country_parameter(provocation=True),
+        "country_beta": randomise_country_parameter()
     }
 
 def randomise_country_parameter(provocation=False):

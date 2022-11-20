@@ -1,7 +1,7 @@
 {% extends 'mysite/base.html' %}
 
 {% block content %}
-<p>{{ scenario }}</p>
+<p>{{ scenario|safe }}</p>
 <p><em>Will you press the button?</em></p>
 <form action="/button/results" method="post">
     {% csrf_token %}
