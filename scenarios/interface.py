@@ -22,6 +22,7 @@ def attr_descriptions():
         "aggression": get_attr_description("aggression"),
         "international_rep": get_attr_description("international_rep"),
         "population": get_attr_description("population"),
+        "provocation": get_attr_description("provocation")
     }
 
 def randomise_both_country_parameters():
