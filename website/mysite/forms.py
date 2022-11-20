@@ -7,8 +7,6 @@ class ButtonForm(forms.Form):
 
 paramdescs = attr_descriptions()
 paramnames = ["cares_about", "no_nukes", "aggression", "international_rep", "population", "provocation"]
-from pprint import pprint
-pprint(paramdescs)
 formoptions = [[((desc["max"] + desc["min"]) / 2, desc["description"]) for desc in paramdescs[name]] for name in paramnames]
 
 class ShowcaseForm(forms.Form):
@@ -24,7 +22,3 @@ class ShowcaseForm(forms.Form):
     b_a  = forms.CharField(label="Country B: Agression", widget=forms.Select(choices=formoptions[2]))
     b_ir = forms.CharField(label="Country B: International Reputation", widget=forms.Select(choices=formoptions[3]))
     b_p  = forms.CharField(label="Country B: Population", widget=forms.Select(choices=formoptions[4]))
-
-if __name__ == "__main__":
-    from pprint import pprint
-    pprint(formoptions)
