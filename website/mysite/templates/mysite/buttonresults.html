@@ -1,0 +1,21 @@
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+
+    <style>
+    html {
+        {% if pressed %}
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/45/MtRedoubtedit1.jpg');
+        {% else %}
+            background-image: url('https://media.cntraveler.com/photos/59e0be702716d532430871b5/16:9/w_2580%2Cc_limit/7-Sydney_GettyImages-646880230.jpg');
+        {% endif %}
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    </style>
+
+    <p>You {{ pressedtext }} the button!!</p>
+{% endblock %}

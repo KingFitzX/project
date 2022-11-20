@@ -28,6 +28,10 @@ class NeuralNet:
     def __del__(self):
         self.__model.save("./model")
 
+    # Defines the class destructor
+    def __del__(self):
+        self.__model.save("./model")
+
     # Defines the network prediction calculation function
     # N.B. trainingDataList is the numpy equivalent list of 2D lists of input values
     def calc_prediction(self, trainingData):
