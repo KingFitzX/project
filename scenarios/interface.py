@@ -8,17 +8,22 @@ def gen_scenario():
     return {
         "scenario": LOREM_IPSUM,
         "parameters": {
-            "country_alpha": randomise_paramters(),
+            "country_alpha": randomise_paramters(provocation=True),
             "country_beta": randomise_paramters()
         }
     }
 
-def randomise_paramters():
-    return {
+def randomise_paramters(provocation=False):
+    temp_dict = {
         "cares_about": random.random(),
         "no_nukes": random.random(),
         "agression": random.random(),
         "international_rep": random.random(),
         "population": random.random()
     }
+
+    if provocation:
+        temp_dict["provocation"] = random.random()
+
+    return temp_dict
 
