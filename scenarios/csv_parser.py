@@ -5,6 +5,7 @@ from . import constants
 from . import filter
 from . import text_gen_helper
 
+
 def get_modified_dict_from_dataframe(dataframe):
     out_list = []
 
@@ -71,7 +72,7 @@ class CSVParser:
         if file_name == "conflicts.csv":
             self.dict = flip_and_merge_conflicts(self.__dict)
 
-    def filter_with(self, filters: list[filter.Filter]):
+    def filter_with(self, filters):
         out_dict = copy.deepcopy(self.dict)
         
         for filter in filters:
