@@ -8,6 +8,8 @@ class NeuralNet:
     # Defines the constructor
     def __init__(self):
 
+        self.__loss_fn = tf.keras.losses.CategoricalCrossentropy(from_logits=False)
+
         # Attempts to load the model
         try:
             self.__model = tf.keras.models.load_model("./model")
@@ -20,7 +22,7 @@ class NeuralNet:
                 tf.keras.layers.Dense(1, activation='sigmoid')
             ])
 
-        self.__loss_fn = tf.keras.losses.CategoricalCrossentropy(from_logits=False)
+            self.compile()
 
     # Defines the class destructor
     def __del__(self):
