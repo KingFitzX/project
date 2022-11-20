@@ -1,0 +1,17 @@
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+<p>{{ scenario }}</p>
+<em>Will you press the button?</em>
+<form action="/button/results" method="post">
+    {% csrf_token %}
+    <input type="hidden" id="pressed" name="pressed" value="on"/>
+    <input type="hidden" id="scid" name="scid" value="{{ scid }}"/>
+    <button type="submit"><strong class="button redbutton">Yes</strong></button>
+</form>
+<form action="/button/results" method="post">
+    {% csrf_token %}
+    <input type="hidden" id="scid" name="scid" value="{{ scid }}"/>
+    <button type="submit"><p class="button">No</p></button>
+</form>
+{% endblock %}

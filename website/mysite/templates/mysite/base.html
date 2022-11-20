@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>NukeOrNot | {{ title }}</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'styles/main.css' %}">
+    </head>
+
+    <body>
+        <h1>NukeOrNot | {{ title }}</h1>
+
+        {% block content %}
+        <p>Error</p>
+        {% endblock %}
+    </body>
+</html>
