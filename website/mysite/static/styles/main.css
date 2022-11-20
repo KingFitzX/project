@@ -1,5 +1,5 @@
 html {
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -44,9 +44,13 @@ button, input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
 	border: none;
-	padding: 0;
+	padding: 1px;
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
     width: 100%;
+}
+
+p {
+    padding: 0px 30px 0px 30px
 }

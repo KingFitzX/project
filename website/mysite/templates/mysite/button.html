@@ -2,7 +2,7 @@
 
 {% block content %}
 <p>{{ scenario }}</p>
-<em>Will you press the button?</em>
+<p><em>Will you press the button?</em></p>
 <form action="/button/results" method="post">
     {% csrf_token %}
     <input type="hidden" id="pressed" name="pressed" value="on"/>
