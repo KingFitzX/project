@@ -7,13 +7,16 @@ Donec pulvinar volutpat neque sed varius. Etiam vulputate ante ac sapien laoreet
 def gen_scenario():
     return {
         "scenario": LOREM_IPSUM,
-        "parameters": {
-            "country_alpha": randomise_paramters(provocation=True),
-            "country_beta": randomise_paramters()
-        }
+        "parameters": randomise_both_country_parameters()
     }
 
-def randomise_paramters(provocation=False):
+def randomise_both_country_parameters():
+    return {
+        "country_alpha": randomise_parameters(provocation=True),
+        "country_beta": randomise_parameters()
+    }
+
+def randomise_country_parameter(provocation=False):
     temp_dict = {
         "cares_about": random.random(),
         "no_nukes": random.random(),

@@ -1,5 +1,4 @@
-def substitute_values(string, values):
-    for place_holder, new_value in values.items():
-        string = string.replace("{" + place_holder + "}", new_value)
+from . import text_gen_helper
 
-    return string
+def full_scenario_from_params(params):
+    pass
