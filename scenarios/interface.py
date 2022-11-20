@@ -27,8 +27,8 @@ def attr_descriptions():
 
 def randomise_both_country_parameters():
     return {
-        "country_alpha": randomise_parameters(provocation=True),
-        "country_beta": randomise_parameters()
+        "country_alpha": randomise_country_parameter(provocation=True),
+        "country_beta": randomise_country_parameter()
     }
 
 def randomise_country_parameter(provocation=False):
