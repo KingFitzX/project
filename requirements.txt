@@ -11,3 +11,7 @@ flake8-isort
 django
 
 tensorflow
+
+pandas
+copy
+random
