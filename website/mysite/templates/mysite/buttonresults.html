@@ -18,4 +18,13 @@
     </style>
 
     <p>You {{ pressedtext }} the button!!</p>
+
+    <p>
+        {% if aiPressed %}
+            The average person would have pressed the button.
+        {% else %}
+            The average person would have <b>not </b>pressed the button.
+        {% endif %}
+    </p>
+
 {% endblock %}

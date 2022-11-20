@@ -51,6 +51,8 @@ def button_results(request):
             result.pressed = pressed
             result.save()
 
+            p["aiPressed"] = paramset.ai_result >= 0.5
+
             neuralnet.train(nu.dicts_to_numpy_array(paramset.paramsToDict()), np.array([[float(pressed)]]), 1)
 
             return render(request, "mysite/buttonresults.html", p)
