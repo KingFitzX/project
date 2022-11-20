@@ -27,15 +27,6 @@ def get_both_country_row(value, params):
 def both_country_sub(string, country_alpha, country_beta):
     return substitute_values(string, {"A": country_alpha, "B": country_beta})
 
-def both_country_rand_sub(string, user, user_country, enemy_country):
-    if filter.is_ignore_char(user):
-        user = random.choice(["A", "B"])
-
-    if user == "A":
-        return both_country_sub(string, user_country, enemy_country)
-    elif user == "B":
-        return both_country_sub(string, enemy_country, user_country)
-
 def get_single_country_text(value, params, country_name):
     row = get_single_country_row(value, params)
     string = single_country_sub(row["text"], country_name)
@@ -44,7 +35,7 @@ def get_single_country_text(value, params, country_name):
 
 def get_both_country_text(value, params, country1_name, country2_name):
     row = get_both_country_row(value, params)
-    string = both_country_rand_sub(row["text"], row["user"], country1_name, country2_name)
+    string = both_country_sub(row["text"], country1_name, country2_name)
 
     return string
 

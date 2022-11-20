@@ -1,0 +1,7 @@
+text,no_nukes_min,no_nukes_max,Approximate Nukes (order of magnitude)
+{A} has nuclear prototypes. However they are few and their power is limited. {A} is likely incapable of starting a nuclear war.,0,0.1,"Very low, ~0"
+Nuclear weapons have only recently been developed by {A}. ,0.1,0.2,1-10
+{A} is on the lower end of the nuclear power spectrum - however {A} still poses a dangerous threat.,0.2,0.4,10-50
+{A} has moderate nuclear weapon technology,0.4,0.7,50-250
+"While not the dominant nuclear weapon holder,{A} is one of the biggest nuclear powerhouses.",0.7,0.9,250-5000
+"{A} is a world leader in nuclear arms, and is widely recognised to have some of the most deadly nuclear weapons, and a lot of them.",0.9,1,>5000

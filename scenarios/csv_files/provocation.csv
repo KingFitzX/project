@@ -1,0 +1,5 @@
+text,provocation_min,provocation_max
+{A} is either an aggressor or at war,0,0.15
+"{A} is neutral, but its ally has been provoked in some way.",0.15,0.35
+Another country has either declared or started war on {A}. ,0.35,0.65
+{A} has been hit with a nuclear warhead.,0.65,1

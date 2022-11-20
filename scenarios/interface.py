@@ -1,4 +1,5 @@
 import random
+from . import csv_parser
 
 LOREM_IPSUM = '''Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis hendrerit felis, ut porttitor felis facilisis ac. Aliquam aliquet ultricies odio, sit amet varius nibh. Fusce congue est ut tempus feugiat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam tincidunt lacus quis quam sollicitudin congue. Donec tristique dignissim fringilla. Quisque posuere, orci nec tristique lobortis, nunc leo imperdiet tellus, quis porttitor tortor lectus sit amet nisi. Aliquam tristique auctor ipsum ultricies ultrices.
 
@@ -8,6 +9,19 @@ def gen_scenario():
     return {
         "scenario": LOREM_IPSUM,
         "parameters": randomise_both_country_parameters()
+    }
+
+def get_attr_description(attr_name):
+    tempObj = csv_parser.DescriptionParser(attr_name)
+    return tempObj.generate_descriptions()
+
+def attr_descriptions():
+    return {
+        "cares_about": get_attr_description("cares_about"),
+        "no_nukes": get_attr_description("no_nukes"),
+        "aggression": get_attr_description("aggression"),
+        "international_rep": get_attr_description("international_rep"),
+        "population": get_attr_description("population"),
     }
 
 def randomise_both_country_parameters():

@@ -1,0 +1,6 @@
+text,aggression_min,aggression_max
+"{A} is neutral, and has stayed out of armed conflicts for most of their history.",0,0.2
+"{A} will retaliate if their close interests are hurt, but are quite peaceful",0.2,0.4
+"{A} has no qualms with retaliating, or attacking for their own interests.",0.4,0.6
+{A} has been known to be aggressive in the past,0.6,0.8
+{A} is bloodthirsty beyond reason,0.8,1
